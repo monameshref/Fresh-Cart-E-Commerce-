@@ -1,13 +1,223 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+:root {
+  --main-color: #0aad0a;
+  --light-color: #f0f3f2;
+  --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+  --font-family: "Encode Sans Expanded", sans-serif;
+  --rating-color: #ffc908;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: var(--font-family) !important;
+}
+.rating-color {
+  color: var(--rating-color);
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+a,
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+.product {
+  border: 1px solid #dee2e6;
+  transition: .5s all;
+}
+.product:hover {
+  box-shadow: var(--shadow);
+  border-color: var(--main-color);
+}
+.product .btn {
+  transition: transform .3s, opacity .3s;
+  transform: translateY(100%);
+  opacity: 0;
+}
+.product:hover .btn {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.font-sm {
+  font-size: 14px;
+}
+.text-main {
+  color: var(--main-color);
+}
+.bg-main {
+  background-color: var(--main-color) !important;
+}
+.bg-main-light {
+  background-color: var(--light-color) !important;
+}
+/* ************************************************ */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background-color: #E0E0E0;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 50px;
+}
+::selection {
+  background-color: #0aad0a;
+  color: white;
+}
+/*! ****** Navbar ****** */
+a.nav-link.active {
+  background-color: var(--main-color);
+  color: #fff !important;
+  border-radius: 8px;
+  transition: .5s
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+  border-color: var(--main-color);
+}
+/*! ****** Global Styles ****** */
+.input-focuc:focus {
+  border-color: #0aad0a;
+  box-shadow: 0 0 0 0.25rem #0aad0a40;
+}
+.btn-hover {
+  transition: 0.3s;
+}
+.btn-hover:hover {
+  background-color: #099309 !important;
+}
+.iconStar {
+  font-size: .75rem;
+}
+.fs-12 {
+  font-size: 12px;
+}
+.LoadingScreen img {
+  width: 250px;
+}
+/*! ****** Slider ****** */
+button.slick-prev,
+button.slick-next {
+  top: -30px;
+  margin: 0 45px;
+}
+.slick-prev {
+  right: 0;
+  left: unset;
+  margin-right: 10px;
+}
+.slick-next {
+  right: -40px;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: var(--main-color);
+  font-size: 30px;
+}
+.HomeSlider button.slick-prev,
+.HomeSlider button.slick-next,
+.ProductSlider button.slick-prev,
+.ProductSlider button.slick-next {
+  display: none !important;
+}
+/*! ****** Products ****** */
+.products form i {
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sale {
+  width: 35px;
+  height: 20px;
+  font-size: 12px;
+  top: 13px;
+  left: 13px;
+}
+.wishlist i {
+  transition: .3s;
+}
+.wishlist:hover i {
+  color: #dc3545;
+}
+/*! ****** Brands ****** */
+.brand {
+  transition: .5s
+}
+.brand:hover {
+  border-color: var(--main-color);
+}
+/*! ****** Footer ****** */
+footer .images img {
+  width: 3.125rem !important;
+}
+footer .col-lg-6:nth-child(2) img {
+  width: 6.25rem;
+}
+footer .col-lg-6:nth-child(2) h6 {
+  font-size: .75rem;
+}
+/*! ****** Register && Login ****** */
+div.aleart {
+  font-size: .8125rem;
+}
+.passBtn {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.login form a:hover,
+.register form a:hover{
+  color: var(--main-color);
+}
+/*! ****** Wishlist ****** */
+table img {
+  width: 80px;
+}
+::-webkit-inner-spin-button {
+  display: none;
+}
+/*! ****** Media Queries ****** */
+@media (max-width: 1045px) {
+  .navbar li.social-media {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  .navbar li.social-media {
+    display: none;
+  }
+  .allOrders .order .order-text {
+    flex-direction: column !important;
+  }
+  .profile .row {
+    width: 100% !important;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 13px;
+  }
+  .cart .payment {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 575px) {
+  html {
+    font-size: 10px;
+  }
+  .products form {
+    width: 100%;
+  }
+}
+@media (max-width: 440px) {
+  .wishlist {
+    font-size: 9px;
+  }
+  .wishlist table img {
+    width: 30px;
+  }
 }
