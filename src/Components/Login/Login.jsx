@@ -50,7 +50,7 @@ export default function Login() {
       const res = await axios.post("https://ecommerce.routemisr.com/api/v1/auth/signin",values)
       .then(function(sucsess) {
         if (sucsess.data.message === "success") {
-        console.log("sucsess",sucsess.data);
+        // console.log("sucsess",sucsess.data);
         // console.log("Token",sucsess.data.token);
         localStorage.setItem("tokenFreshCart",sucsess.data.token);
         setToken(sucsess.data.token);

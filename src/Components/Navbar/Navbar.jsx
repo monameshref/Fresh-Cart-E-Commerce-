@@ -43,9 +43,9 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink className="nav-link px-2" to="/brands">Brands</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link px-2" to="/AllOrders">Orders</NavLink>
-                        </li>
+                            { numOfCartItems ? <li className="nav-item">
+                                <NavLink className="nav-link px-2" to="/AllOrders">Orders</NavLink>
+                            </li> : "" }
                     </ul> : ""}
 
                     <ul className="navbar-nav ms-auto my-2 mb-lg-0 align-items-center justify-content-between">

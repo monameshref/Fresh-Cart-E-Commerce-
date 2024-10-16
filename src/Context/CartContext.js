@@ -27,7 +27,6 @@ export default function CartContextProvider({children}) {
             // setNumOfCartItems(data.numOfCartItems);
             // setTotalCartPrice(data.data.totalCartPrice);
             getLoggedUserCart();
-            localStorage.setItem("userId",data.data.cartOwner);
             return data;
         }
         catch(error){
@@ -44,6 +43,8 @@ export default function CartContextProvider({children}) {
                     setAllProducts(data.data.products);
                     setNumOfCartItems(data.numOfCartItems);
                     setTotalCartPrice(data.data.totalCartPrice);
+                    // console.log("getLoggedUserCart",data);
+                    localStorage.setItem("userId",data?.data.cartOwner);
 
                     // console.log(data.data._id); 
                     return data;
