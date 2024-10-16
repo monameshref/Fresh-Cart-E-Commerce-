@@ -7,7 +7,6 @@ export default function Profile() {
 
     const userProfile = JSON.parse(localStorage.getItem('userData'));
 
-
     return <>
         <Helmet>
             <title>FreshCart-Profile</title>

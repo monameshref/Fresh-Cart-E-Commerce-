@@ -1,12 +1,9 @@
 import axios from 'axios'
-import React, {useState } from 'react'
 import { useQuery } from 'react-query';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { Helmet } from 'react-helmet';
 
 export default function AllOrders() {
-
-  const [numOfordersItems, setNumOfordersItems] = useState(0);
 
   async function getUserOrders(){
     const userId = localStorage.getItem("userId");
